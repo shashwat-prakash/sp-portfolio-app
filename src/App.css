@@ -1,0 +1,283 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.hero-section {
+  background-image: url('/src/Assets/hero_section_bg.jpg');
+  background-size: cover;
+  background-position: center;
+  color: rgb(255, 255, 255);
+  padding: 100px 0;
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero-section p {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+.hero-section .btn {
+  margin: 5px;
+}
+
+.featured-skills {
+  padding: 50px 0;
+}
+
+.featured-skills h2 {
+  margin-bottom: 40px;
+}
+
+.featured-skills .card {
+  height: 100%;
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.featured-skills .card-title {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.featured-skills .card-text {
+  font-size: 1rem;
+}
+
+.portfolio-highlights {
+  padding: 50px 0;
+}
+
+.portfolio-highlights h2 {
+  margin-bottom: 40px;
+}
+
+.portfolio-highlights .card {
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-highlights .card-title {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.portfolio-highlights .card-text {
+  font-size: 1rem;
+}
+
+.portfolio-highlights .card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.testimonials {
+  padding: 50px 0;
+}
+
+.testimonials h2 {
+  margin-bottom: 40px;
+}
+
+.testimonials .card {
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.testimonials .card-title {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.testimonials .card-text {
+  font-size: 1rem;
+}
+
+.footer {
+  padding: 30px 0;
+}
+
+.footer h5 {
+  margin-bottom: 15px;
+}
+
+.footer p {
+  margin-bottom: 10px;
+}
+
+.about-page {
+  padding: 50px 0;
+}
+
+.about-page h1 {
+  margin-bottom: 30px;
+}
+
+.about-page .card {
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-page .card-title {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.about-page .card-text {
+  font-size: 1rem;
+}
+
+.about-page .badge {
+  font-size: 0.9rem;
+  padding: 10px 15px;
+  margin: 5px;
+}
+
+.about-page .btn-primary {
+  margin-top: 20px;
+}
+
+.contact-us-page {
+  padding: 50px 0;
+}
+
+.services-page {
+  padding: 50px 0;
+}
+
+.services-page h1 {
+  margin-bottom: 30px;
+}
+
+.services-page .card {
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.services-page .card-title {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.services-page .card-text {
+  font-size: 1rem;
+}
+
+.services-page .service-icon {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+
+.custom-navbar {
+  background-color: #f8f9fa !important;
+  padding: 1rem 0;
+}
+
+.navbar-brand-link {
+  text-decoration: none;
+  color: #343a40;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-link {
+  color: #343a40 !important;
+  font-size: 1rem;
+  margin: 0 0.5rem;
+  transition: color 0.2s ease-in-out;
+}
+
+.nav-link:hover {
+  color: #007bff !important;
+}
+
+.active-link {
+  color: #007bff !important;
+  font-weight: bold;
+}
+
+.ml-3 {
+  margin-left: 1rem !important;
+}
+
+.ml-2 {
+  margin-left: 0.5rem !important;
+}
+
+.btn-outline-primary {
+  border-color: #007bff;
+  color: #007bff;
+}
+
+.btn-outline-primary:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+
+.typewriter-container {
+  overflow: hidden; /* Ensures the text will not overflow */
+  white-space: nowrap; /* Keeps the text in one line */
+  border-right: .15em solid orange; /* Creates the cursor effect */
+  animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+  font-size: 1.5rem; /* Adjust font size as needed */
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange }
+}
