@@ -175,6 +175,12 @@
   margin-top: 20px;
 }
 
+.badge-container {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
 .contact-us-page {
   padding: 50px 0;
 }

@@ -1,11 +1,37 @@
 import { useEffect } from "react";
 import { Badge, Card, Col, Container, Row } from "react-bootstrap";
+import hero_section_bg from "../Assets/hero_section_bg.jpg";
 
 interface IAboutProps {}
 
 const About: React.FunctionComponent<IAboutProps> = (props) => {
   useEffect(() => {
     document.title = "Shashwat | About";
+
+    const script = document.createElement("script");
+    script.src = "https://cdn.credly.com/assets/utilities/embed.js";
+    script.async = true;
+    script.onload = () => {
+      console.log("Credly script loaded successfully.");
+      // Adjust iframe width after script loads
+      const badgeContainer = document.querySelector(
+        ".badge-container"
+      ) as HTMLElement;
+      if (badgeContainer) {
+        const iframe = badgeContainer.querySelector("iframe");
+        if (iframe) {
+          iframe.style.width = "100%";
+        }
+      }
+    };
+    script.onerror = () => {
+      console.error("Error loading Credly script.");
+    };
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
   }, []);
 
   const skills = [
@@ -39,13 +65,60 @@ const About: React.FunctionComponent<IAboutProps> = (props) => {
   return (
     <>
       <Container className="about-page">
-        <Row className="my-5">
+        <Row>
           <Col md={12}>
             <h1 className="text-center">About Me</h1>
-            <p className="lead text-center">
-              Experienced Software Developer specialized in Web Development,
-              Backend, Conversational AI, and Chatbot solutions with a strong
-              focus on integrating Generative AI technologies.
+          </Col>
+        </Row>
+        <Row className="my-5">
+          <Col md={6} className="mb-4">
+            <Card>
+              <Card.Body>
+                <Card.Img variant="top" src={hero_section_bg} height="500px" />
+                {/* <img
+                  src={hero_section_bg}
+                  alt="My Portfolio Pic"
+                  height="500px"
+                  width="600px"
+                /> */}
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col md={6} className="mb-4">
+            <p>
+              With over 5+ years of hands-on experience in Fullstack Web
+              Development, coupled with a deep dive into the Contact Center
+              domain for the past 2 years, I bring a unique blend of technical
+              expertise and industry knowledge to the table.
+            </p>
+            <p>
+              Specializing in C#, .NET, and ReactJS, I thrive on leveraging
+              cutting-edge technologies to architect scalable solutions. My
+              proficiency extends to harnessing the power of AWS services such
+              as Lambda, Amazon Connect, LEX, S3, CloudFront, APIGateway, and
+              Kinesis to drive business success.
+            </p>
+            <p>
+              I have a proven track record of delivering tailor-made solutions,
+              including intuitive Agent Desktops for contact centers and
+              intelligent Chatbots that enhance customer interactions and
+              streamline processes.
+            </p>
+            <p>
+              As an AWS Certified Developer Associate, I am committed to
+              continuous learning and staying ahead of the curve in cloud
+              technology.
+            </p>
+            <p>
+              Recently, I've embarked on a journey into the realm of Generative
+              AI for Conversational Chatbots, exploring innovative approaches
+              using AWS Bedrock and ChatGPT. I thrive on challenges and am
+              passionate about pushing the boundaries of technology to create
+              impactful solutions.
+            </p>
+            <p>
+              Let's connect and explore how we can collaborate to drive
+              innovation and elevate user experiences.
             </p>
           </Col>
         </Row>
@@ -89,6 +162,13 @@ const About: React.FunctionComponent<IAboutProps> = (props) => {
               <Card.Body>
                 <Card.Title>Professional Experience</Card.Title>
                 <Card.Text>
+                  <div
+                    className="badge-container"
+                    data-iframe-width="100%"
+                    data-iframe-height="270"
+                    data-share-badge-id="ae7cb03b-7df9-46e1-81ee-f8da734250ca"
+                    data-share-badge-host="https://www.credly.com"
+                  ></div>
                   <p>
                     With over 5+ years of experience in Web Development and
                     Conversational AI, I have worked on numerous projects that
