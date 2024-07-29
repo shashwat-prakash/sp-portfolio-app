@@ -1,10 +1,16 @@
-import { useEffect } from "react";
-import { Button, Card, Col, Container, Row } from "react-bootstrap";
+import { useEffect, useState } from "react";
+import { Button, Card, Carousel, Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import hero_section_bg from "../Assets/hero_section_bg.jpg";
 
 interface IHomeProps {}
 
 const Home: React.FunctionComponent<IHomeProps> = (props) => {
+  const [index, setIndex] = useState(0);
+
+  const handleSelect = (selectedIndex: any) => {
+    setIndex(selectedIndex);
+  };
   const skills = [
     {
       title: "Web Development",
@@ -154,7 +160,7 @@ const Home: React.FunctionComponent<IHomeProps> = (props) => {
         </Row>
       </Container>
 
-      <Container className="testimonials">
+      {/* <Container className="testimonials">
         <h2 className="text-center">Testimonials</h2>
         <Row>
           {testimonials.map((testimonial, index) => (
@@ -174,6 +180,35 @@ const Home: React.FunctionComponent<IHomeProps> = (props) => {
             </Col>
           ))}
         </Row>
+      </Container> */}
+
+      <Container className="testimonials">
+        <h2 className="text-center">Testimonials</h2>
+        <Carousel>
+          {testimonials.map((testimonial, index) => (
+            <Carousel.Item key={index} interval={3000}>
+              <Row className="justify-content-center">
+                <Col md={4} className="mb-2">
+                  <Card className="text-center">
+                    <Card.Img
+                      variant="top"
+                      src={hero_section_bg}
+                      className="rounded-circle mx-auto mt-3"
+                      style={{ width: "150px", height: "150px" }}
+                    />
+                    <Card.Body>
+                      <Card.Title>{testimonial.name}</Card.Title>
+                      {/* <Card.Text>{testimonial.feedback}</Card.Text> */}
+                      <blockquote className="blockquote">
+                        <p>{testimonial.feedback}</p>
+                      </blockquote>
+                    </Card.Body>
+                  </Card>
+                </Col>
+              </Row>
+            </Carousel.Item>
+          ))}
+        </Carousel>
       </Container>
     </>
   );
