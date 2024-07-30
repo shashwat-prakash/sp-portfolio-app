@@ -1,6 +1,7 @@
 import { useEffect } from "react";
-import { Badge, Card, Col, Container, Row } from "react-bootstrap";
+import { Badge, Button, Card, Col, Container, Row } from "react-bootstrap";
 import hero_section_bg from "../Assets/hero_section_bg.jpg";
+import { Link } from "react-router-dom";
 
 interface IAboutProps {}
 
@@ -47,6 +48,63 @@ const About: React.FunctionComponent<IAboutProps> = (props) => {
     { category: "Generative AI", technologies: ["AWS Bedrock", "OpenAI"] },
   ];
 
+  const experienceData = [
+    {
+      company: "PwC US",
+      logo: "http://www.pwc.com/etc/designs/pwc/css_common/image/404.gif", // You can use URLs or import images
+      role: "Senior Associate",
+      responsibilities: [
+        "Migration of old Web API application from .Net 4.5 to .Net 5 Web API",
+        "Implement SAML2, and OIDC Authentication and Authorization by using OKTA and AWS Cognito",
+        "Worked on AWS Lambda, Connect, API Gateway, DynamoDB, S3, CloudFront, EventBridge",
+        "Integration of Amazon Connect CCP and Connect APIs into custom Contact Center application",
+        "Integration of third parties application into custom Contact Center application",
+        "Create and configure IVR Flows for Calls and Chat in Amazon Connect",
+      ],
+      startDate: "August 2024",
+      endDate: "Present",
+    },
+    {
+      company: "Genpact India",
+      logo: "https://www.genpact.com/content/experience-fragments/genpact/us/en/site/header0/header/_jcr_content/root/container_1299338043/image.coreimg.svg/1721268489491/genpact-logo.svg", // You can use URLs or import images
+      role: "Consultant",
+      responsibilities: [
+        "Migration of old Web API application from .Net 4.5 to .Net 5 Web API",
+        "Implement SAML2, and OIDC Authentication and Authorization by using OKTA and AWS Cognito",
+        "Worked on AWS Lambda, Connect, API Gateway, DynamoDB, S3, CloudFront, EventBridge",
+        "Integration of Amazon Connect CCP and Connect APIs into custom Contact Center application",
+        "Integration of third parties application into custom Contact Center application",
+        "Create and configure IVR Flows for Calls and Chat in Amazon Connect",
+      ],
+      startDate: "March 2022",
+      endDate: "July 2024",
+    },
+    {
+      company: "Agenty Analytics Pvt Ltd",
+      logo: "https://cdn.agenty.com/images/icon/agenty-logo.png", // You can use URLs or import images
+      role: "Software Engineer",
+      responsibilities: [
+        "Developed backend services using .NET, C# and write xUnit Test Cases",
+        "Created Web Application Frontend in Angular",
+        "Managed cloud infrastructure on AWS and GCP",
+      ],
+      startDate: "December 2020",
+      endDate: "February 2022",
+    },
+    {
+      company: "Sigma Infosolutions Pvt Ltd",
+      logo: "https://cdn-enmoh.nitrocdn.com/EwpHCdlXbcSkkIHtbaniSwqwTdlmGwIV/assets/images/optimized/rev-008abc2/www.sigmainfo.net/wp-content/uploads/2023/07/logo-wt.png",
+      role: "Associate Software Engineer",
+      responsibilities: [
+        "Investigate, design, and develop Web API in .Net Core",
+        "Created Web Application Frontend in Angular",
+        "Worked on database management with SQL and MongoDB",
+      ],
+      startDate: "December 2018",
+      endDate: "February 2020",
+    },
+  ];
+
   const badgeColors = [
     "primary",
     "secondary",
@@ -67,15 +125,17 @@ const About: React.FunctionComponent<IAboutProps> = (props) => {
       <Container className="about-page">
         <Row>
           <Col md={12}>
-            <h1 className="text-center">Who am I?</h1>
-            <p>
-              I am Shashwat Prakash. I am a dedicated Software Engineer
-              specializing in Web Development, Backend Development, and crafting
-              Conversational AI Chatbots. With a strong foundation in Cloud
-              platforms, I leverage my skills to create innovative and efficient
-              solutions that drive business success and enhance customer
-              engagement.
-            </p>
+            <div>
+              <h1 className="text-center">Who am I?</h1>
+              <p>
+                I am Shashwat Prakash. I am a dedicated Software Engineer
+                specializing in Web Development, Backend Development, and
+                crafting Conversational AI Chatbots. With a strong foundation in
+                Cloud platforms, I leverage my skills to create innovative and
+                efficient solutions that drive business success and enhance
+                customer engagement.
+              </p>
+            </div>
           </Col>
         </Row>
         <Row className="my-5">
@@ -129,33 +189,33 @@ const About: React.FunctionComponent<IAboutProps> = (props) => {
             <Card className="text-center h-100">
               <Card.Body>
                 <Card.Title>Skills and Expertise</Card.Title>
-                <Card.Text>
+                <div>
                   {skills.map((skill, index) => (
                     <div key={index} className="mb-1">
                       <h5 className="d-inline">{skill.category}</h5>
                       {skill.technologies.length > 0 ? (
                         skill.technologies.map((tech, i) => (
-                          <h6 className="d-inline">
-                            <Badge
-                              key={i}
-                              pill
-                              bg={getRandomColor()}
-                              className="m-1"
-                            >
-                              {tech}
-                            </Badge>
-                          </h6>
+                          <Badge
+                            key={tech}
+                            pill
+                            bg={getRandomColor()}
+                            className="m-1 small"
+                            style={{
+                              fontSize: "0.95rem",
+                              padding: "0.25rem 0.5rem",
+                            }}
+                          >
+                            {tech}
+                          </Badge>
                         ))
                       ) : (
-                        <h6 className="d-inline">
-                          <Badge pill bg={getRandomColor()} className="m-1">
-                            {skill.category}
-                          </Badge>
-                        </h6>
+                        <Badge pill bg={getRandomColor()} className="m-1">
+                          {skill.category}
+                        </Badge>
                       )}
                     </div>
                   ))}
-                </Card.Text>
+                </div>
               </Card.Body>
             </Card>
           </Col>
@@ -163,7 +223,7 @@ const About: React.FunctionComponent<IAboutProps> = (props) => {
             <Card className="text-center h-100">
               <Card.Body>
                 <Card.Title>Certifications</Card.Title>
-                <Card.Text>
+                <div>
                   <div
                     className="badge-container"
                     data-iframe-width="100%"
@@ -171,25 +231,66 @@ const About: React.FunctionComponent<IAboutProps> = (props) => {
                     data-share-badge-id="ae7cb03b-7df9-46e1-81ee-f8da734250ca"
                     data-share-badge-host="https://www.credly.com"
                   ></div>
+                  <h4>AWS Certified Developer - Associate</h4>
                   <p>
-                    With over 5+ years of experience in Web Development and
-                    Conversational AI, I have worked on numerous projects that
-                    involved creating scalable and robust solutions for clients.
-                    My expertise in Cloud Services and AI technologies has
-                    enabled me to deliver innovative and efficient solutions
-                    tailored to meet specific business needs.
+                    I am an AWS Certified Developer - Associate, demonstrating
+                    my proficiency in designing, deploying, and maintaining
+                    applications on the Amazon Web Services (AWS) platform. This
+                    certification validates my expertise in key AWS services and
+                    best practices for developing scalable and highly available
+                    applications. With this certification, I am equipped to
+                    leverage AWS tools and technologies to drive innovation and
+                    efficiency in cloud-based projects.
                   </p>
-                  <p>
-                    I have a strong background in developing and integrating
-                    conversational AI and Chatbot solutions into Contact Center
-                    platforms, significantly enhancing customer engagement and
-                    support capabilities.
-                  </p>
-                </Card.Text>
+                </div>
               </Card.Body>
             </Card>
           </Col>
         </Row>
+
+        <Row className="my-5">
+          <h2 className="text-center mb-4">Professional Experience</h2>
+          {experienceData.map((experience, index) => (
+            <Col md={6} key={index} className="mb-4">
+              <Card className="h-100">
+                <Card.Body>
+                  <div className="d-flex align-items-center mb-3">
+                    <img
+                      src={experience.logo}
+                      alt={experience.company}
+                      className={
+                        experience.company === "Sigma Infosolutions Pvt Ltd" ||
+                        experience.company === "Genpact India"
+                          ? "bg-dark me-3"
+                          : "me-3"
+                      }
+                      style={{ width: "80px", height: "50px" }}
+                    />
+                    <div>
+                      <Card.Title className="mb-1">
+                        {experience.company}
+                      </Card.Title>
+                      <Card.Subtitle className="mb-2 text-muted">
+                        {experience.role}
+                      </Card.Subtitle>
+                    </div>
+                  </div>
+                  <Card.Text>
+                    <ul>
+                      {experience.responsibilities.map((responsibility, i) => (
+                        <li key={i}>{responsibility}</li>
+                      ))}
+                    </ul>
+                  </Card.Text>
+                  <Card.Footer className="text-muted">
+                    {experience.startDate} - {experience.endDate}
+                  </Card.Footer>
+                </Card.Body>
+              </Card>
+            </Col>
+          ))}
+        </Row>
+
         <Row className="my-5 text-center">
           <Col>
             <h2>Let's Work Together</h2>
@@ -199,9 +300,11 @@ const About: React.FunctionComponent<IAboutProps> = (props) => {
               application, an intelligent chatbot, or integration of generative
               AI technologies, I'm here to help.
             </p>
-            <a href="/contact" className="btn btn-primary">
-              Get in Touch
-            </a>
+            <Link to={"/contact"}>
+              <Button variant="primary" className="m-2">
+                Get in Touch
+              </Button>
+            </Link>
           </Col>
         </Row>
       </Container>

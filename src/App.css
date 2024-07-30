@@ -230,6 +230,22 @@
   margin-bottom: 20px;
 }
 
+/* Add to your CSS file */
+.not-found-container {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.not-found-container h1 {
+  font-size: 100px;
+  color: #f8d7da;
+}
+
+.not-found-container p {
+  font-size: 24px;
+}
+
+
 
 .custom-navbar {
   background-color: #f8f9fa !important;
@@ -304,4 +320,30 @@
 @keyframes blink-caret {
   from, to { border-color: transparent }
   50% { border-color: orange }
+}
+
+
+/* Layout.css */
+body, html, #root {
+  height: 100%;
+}
+
+.d-flex {
+  display: flex !important;
+}
+
+.flex-column {
+  flex-direction: column !important;
+}
+
+.min-vh-100 {
+  min-height: 100vh !important;
+}
+
+.flex-grow-1 {
+  flex-grow: 1 !important;
+}
+
+.mt-auto {
+  margin-top: auto !important;
 }
