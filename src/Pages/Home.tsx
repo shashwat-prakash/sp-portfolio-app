@@ -113,7 +113,7 @@ const Home: React.FunctionComponent<IHomeProps> = (props) => {
                 </Button>
               </Link>
               <Link to={"contact"}>
-                <Button variant="secondary" href="/contact" className="m-2">
+                <Button variant="secondary" className="m-2">
                   Get in Touch
                 </Button>
               </Link>
@@ -146,7 +146,7 @@ const Home: React.FunctionComponent<IHomeProps> = (props) => {
           {projects.map((project, index) => (
             <Col md={4} key={index} className="mb-4">
               <Card>
-                <Card.Img variant="top" src={project.image} />
+                <Card.Img variant="top" src={hero_section_bg} />
                 <Card.Body>
                   <Card.Title>{project.title}</Card.Title>
                   <Card.Text>{project.description}</Card.Text>
@@ -189,7 +189,7 @@ const Home: React.FunctionComponent<IHomeProps> = (props) => {
             <Carousel.Item key={index} interval={3000}>
               <Row className="justify-content-center">
                 <Col md={4} className="mb-2">
-                  <Card className="text-center">
+                  <Card className="text-center h-100">
                     <Card.Img
                       variant="top"
                       src={hero_section_bg}

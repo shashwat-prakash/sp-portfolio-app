@@ -7,7 +7,7 @@ const SPNavbar: React.FunctionComponent<ISPNavbarProps> = (props) => {
   const location = useLocation();
   return (
     <>
-      <Navbar bg="light" expand="lg" className="custom-navbar">
+      <Navbar bg="light" expand="lg" className="custom-navbar sticky-top">
         <Container>
           <Navbar.Brand>
             <Link to="/" className="navbar-brand-link">
@@ -52,6 +52,17 @@ const SPNavbar: React.FunctionComponent<ISPNavbarProps> = (props) => {
                 }
               >
                 Services
+              </Nav.Link>
+              <Nav.Link
+                as={NavLink}
+                to="/blogs"
+                className={
+                  location.pathname === "/blogs"
+                    ? "active-link nav-link"
+                    : "nav-link"
+                }
+              >
+                Blogs
               </Nav.Link>
               <Nav.Link
                 as={NavLink}

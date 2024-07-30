@@ -1,10 +1,13 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import SPForm from "../Components/SPForm";
 import { Col, Container, Row } from "react-bootstrap";
+import { toast } from "react-toastify";
 
 interface IContactProps {}
 
 const Contact: React.FunctionComponent<IContactProps> = (props) => {
+  const [isContactUsFormSubmited, setIsContactUsFormSubmited] = useState(false);
+
   useEffect(() => {
     document.title = "Shashwat | Contact Us";
   }, []);
@@ -39,7 +42,16 @@ const Contact: React.FunctionComponent<IContactProps> = (props) => {
   ];
 
   const handleSubmit = (data: { [key: string]: any }) => {
+    setIsContactUsFormSubmited(false);
     console.log(data);
+
+    // Simulate form submission success
+    toast.success("Form submitted successfully!", {
+      position: "top-right",
+      autoClose: 3000,
+    });
+
+    setIsContactUsFormSubmited(true);
   };
 
   return (

@@ -33,7 +33,19 @@ const SPFooter: React.FunctionComponent<ISPFooterProps> = (props) => {
                   GitHub
                 </a>
                 <br />
-                <a href="#" className="text-white">
+                <a
+                  target="_blank"
+                  href="https://stackoverflow.com/users/12359013/shashwat-prakash"
+                  className="text-white"
+                >
+                  Stack Overflow
+                </a>
+                <br />
+                <a
+                  target="_blank"
+                  href="https://x.com/ShashwatPrk"
+                  className="text-white"
+                >
                   Twitter
                 </a>
               </p>
