@@ -1,15 +1,8 @@
 import React, { lazy, Suspense, useEffect, useState } from "react";
-import logo from "./logo.svg";
 import "./App.css";
-//import Home from "./Pages/Home";
 import { Route, Routes } from "react-router-dom";
-//import Contact from "./Pages/Contact";
-import SPNavbar from "./Components/SPNavbar";
-import SPFooter from "./Components/SPFooter";
-//import About from "./Pages/About";
-//import Services from "./Pages/Services";
 import SPLoading from "./Components/SPLoading";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import NotFound from "./Pages/NotFound";
 import Blogs from "./Pages/Blogs";
 import Layout from "./Components/Layout";
@@ -35,8 +28,6 @@ function App() {
   }
   return (
     <>
-      {/* <SPNavbar /> */}
-      {/* <Layout> */}
       <Suspense fallback={<SPLoading />}>
         <Routes>
           <Route path="/" element={<Layout />}>
@@ -46,13 +37,10 @@ function App() {
             <Route path="/blogs" element={<Blogs />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />{" "}
-            {/* Catch-all route for 404 */}
           </Route>
         </Routes>
       </Suspense>
       <ToastContainer />
-      {/* </Layout> */}
-      {/* <SPFooter /> */}
     </>
   );
 }
