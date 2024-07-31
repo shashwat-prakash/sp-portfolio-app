@@ -7,10 +7,26 @@ interface IContactProps {}
 
 const Contact: React.FunctionComponent<IContactProps> = (props) => {
   const [isContactUsFormSubmited, setIsContactUsFormSubmited] = useState(false);
+  const [isButtonDisabled, setIsButtonDisabled] = useState(true);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+    contact: "",
+  });
 
   useEffect(() => {
     document.title = "Shashwat | Contact Us";
   }, []);
+
+  useEffect(() => {
+    const { name, email, contact, message } = formData;
+    if (name && email && contact && message) {
+      setIsButtonDisabled(false);
+    } else {
+      setIsButtonDisabled(true);
+    }
+  }, [formData]);
 
   const fields = [
     { name: "name", label: "Name", type: "text" },
@@ -43,15 +59,43 @@ const Contact: React.FunctionComponent<IContactProps> = (props) => {
 
   const handleSubmit = (data: { [key: string]: any }) => {
     setIsContactUsFormSubmited(false);
-    console.log(data);
+    // const { name, email, contact, message } = data;
 
-    // Simulate form submission success
-    toast.success("Form submitted successfully!", {
-      position: "top-right",
-      autoClose: 3000,
+    // setFormData({
+    //   name: name,
+    //   email: email,
+    //   contact: contact,
+    //   message: message,
+    // });
+
+    setFormData({
+      name: "",
+      email: "",
+      message: "",
+      contact: "",
     });
 
+    // Simulate form submission success
+    toast.success(
+      "Submission complete! We appreciate you reaching out. Expect a response from us shortly.",
+      {
+        position: "top-right",
+        autoClose: 3000,
+      }
+    );
+
     setIsContactUsFormSubmited(true);
+  };
+
+  const handleChange = (data: { [key: string]: any }) => {
+    const { name, email, contact, message } = data;
+
+    setFormData({
+      name: name,
+      email: email,
+      contact: contact,
+      message: message,
+    });
   };
 
   return (
@@ -66,7 +110,12 @@ const Contact: React.FunctionComponent<IContactProps> = (props) => {
             </p>
           </Col>
         </Row>
-        <SPForm fields={fields} onSubmit={handleSubmit} />
+        <SPForm
+          fields={fields}
+          onSubmit={handleSubmit}
+          isButtonDisabled={isButtonDisabled}
+          onChange={handleChange}
+        />
       </Container>
     </>
   );

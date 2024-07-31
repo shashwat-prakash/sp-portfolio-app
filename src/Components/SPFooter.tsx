@@ -11,7 +11,14 @@ const SPFooter: React.FunctionComponent<ISPFooterProps> = (props) => {
           <Row>
             <Col md={4}>
               <h5>Contact Information</h5>
-              <p>Email: shashwat22.14sep@gmail.com</p>
+              {/* <p>Email: shashwat22.14sep@gmail.com</p> */}
+              <p>
+                Email:{" "}
+                <a target="_blank" href="mailto:shashwat22.14sep@gmail.com">
+                  shashwat22.14sep@gmail.com
+                </a>
+              </p>
+
               <p>Phone: +91-9066740766</p>
             </Col>
             <Col md={4}>

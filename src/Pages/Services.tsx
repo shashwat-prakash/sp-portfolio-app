@@ -62,7 +62,7 @@ const Services: React.FunctionComponent<IServicesProps> = (props) => {
         <Row>
           {services.map((service, index) => (
             <Col md={4} key={index} className="mb-4">
-              <Card className="text-center h-100">
+              <Card className="text-center h-100 tilt-card">
                 <Card.Body>
                   <div className="service-icon h1">{service.icon}</div>
                   <Card.Title>{service.title}</Card.Title>

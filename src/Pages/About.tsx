@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Badge, Button, Card, Col, Container, Row } from "react-bootstrap";
-import hero_section_bg from "../Assets/hero_section_bg.jpg";
+import shashwat_portfolio_pic from "../Assets/shashwat_portfolio_pic.jpeg";
 import { Link } from "react-router-dom";
 
 interface IAboutProps {}
@@ -42,10 +42,23 @@ const About: React.FunctionComponent<IAboutProps> = (props) => {
     { category: "Contact Center Solutions", technologies: ["Amazon Connect"] },
     {
       category: "Database Management",
-      technologies: ["MySQL", "Postgres", "MongoDB"],
+      technologies: ["MySQL", "Postgres", "MongoDB", "DynamoDB"],
     },
     { category: "Cloud Services", technologies: ["AWS"] },
     { category: "Generative AI", technologies: ["AWS Bedrock", "OpenAI"] },
+    { category: "Version Control", technologies: ["GitHub", "Bitbucket"] },
+    {
+      category: "Tools",
+      technologies: [
+        "Visual Studio",
+        "VS Code",
+        "xCode",
+        "PgAdmin",
+        "MySQL Workbench",
+        "Git",
+        "Postman",
+      ],
+    },
   ];
 
   const experienceData = [
@@ -54,12 +67,11 @@ const About: React.FunctionComponent<IAboutProps> = (props) => {
       logo: "http://www.pwc.com/etc/designs/pwc/css_common/image/404.gif", // You can use URLs or import images
       role: "Senior Associate",
       responsibilities: [
-        "Migration of old Web API application from .Net 4.5 to .Net 5 Web API",
-        "Implement SAML2, and OIDC Authentication and Authorization by using OKTA and AWS Cognito",
         "Worked on AWS Lambda, Connect, API Gateway, DynamoDB, S3, CloudFront, EventBridge",
+        "Create and configure IVR Flows for Calls and Chat in Amazon Connect",
         "Integration of Amazon Connect CCP and Connect APIs into custom Contact Center application",
         "Integration of third parties application into custom Contact Center application",
-        "Create and configure IVR Flows for Calls and Chat in Amazon Connect",
+        "Implement SAML2, and OIDC Authentication and Authorization by using OKTA and AWS Cognito",
       ],
       startDate: "August 2024",
       endDate: "Present",
@@ -84,9 +96,8 @@ const About: React.FunctionComponent<IAboutProps> = (props) => {
       logo: "https://cdn.agenty.com/images/icon/agenty-logo.png", // You can use URLs or import images
       role: "Software Engineer",
       responsibilities: [
-        "Developed backend services using .NET, C# and write xUnit Test Cases",
+        "Developed backend services using .NET, C#, MySQL, and write xUnit Test Cases",
         "Created Web Application Frontend in Angular",
-        "Managed cloud infrastructure on AWS and GCP",
       ],
       startDate: "December 2020",
       endDate: "February 2022",
@@ -96,9 +107,8 @@ const About: React.FunctionComponent<IAboutProps> = (props) => {
       logo: "https://cdn-enmoh.nitrocdn.com/EwpHCdlXbcSkkIHtbaniSwqwTdlmGwIV/assets/images/optimized/rev-008abc2/www.sigmainfo.net/wp-content/uploads/2023/07/logo-wt.png",
       role: "Associate Software Engineer",
       responsibilities: [
-        "Investigate, design, and develop Web API in .Net Core",
+        "Investigate, and develop Web API in .Net Core with MySQL, and MongoDB",
         "Created Web Application Frontend in Angular",
-        "Worked on database management with SQL and MongoDB",
       ],
       startDate: "December 2018",
       endDate: "February 2020",
@@ -142,7 +152,12 @@ const About: React.FunctionComponent<IAboutProps> = (props) => {
           <Col md={6} className="mb-4">
             <Card>
               <Card.Body>
-                <Card.Img variant="top" src={hero_section_bg} height="500px" />
+                <Card.Img
+                  variant="top"
+                  src={shashwat_portfolio_pic}
+                  height="auto"
+                  className="rounded-circle mx-auto mt-1"
+                />
               </Card.Body>
             </Card>
           </Col>
@@ -182,37 +197,56 @@ const About: React.FunctionComponent<IAboutProps> = (props) => {
               Let's connect and explore how we can collaborate to drive
               innovation and elevate user experiences.
             </p>
+            <Link to={"/contact"}>
+              <Button variant="outline-info" size="lg" className="">
+                Let's Connect
+              </Button>
+            </Link>
           </Col>
         </Row>
         <Row className="my-5">
           <Col md={6} className="mb-4">
-            <Card className="text-center h-100">
+            <Card className="h-100">
               <Card.Body>
-                <Card.Title>Skills and Expertise</Card.Title>
-                <div>
+                <Card.Title className="text-center">
+                  Skills and Expertise
+                </Card.Title>
+                <div className="mt-4">
                   {skills.map((skill, index) => (
-                    <div key={index} className="mb-1">
-                      <h5 className="d-inline">{skill.category}</h5>
-                      {skill.technologies.length > 0 ? (
-                        skill.technologies.map((tech, i) => (
-                          <Badge
-                            key={tech}
-                            pill
-                            bg={getRandomColor()}
-                            className="m-1 small"
-                            style={{
-                              fontSize: "0.95rem",
-                              padding: "0.25rem 0.5rem",
-                            }}
-                          >
-                            {tech}
-                          </Badge>
-                        ))
-                      ) : (
-                        <Badge pill bg={getRandomColor()} className="m-1">
-                          {skill.category}
-                        </Badge>
-                      )}
+                    <div key={index} className="mb-2">
+                      <Row>
+                        <Col md={5} className="text-md-left text-start">
+                          <h5>{skill.category}</h5>
+                        </Col>
+                        <Col md={7} className="text-md-left">
+                          {/* <span>{" : "}</span> */}
+                          {skill.technologies.length > 0 ? (
+                            skill.technologies.map((tech) => (
+                              <Badge
+                                key={tech}
+                                pill
+                                bg={getRandomColor()}
+                                className="m-1 small"
+                                style={{
+                                  fontSize: "0.85rem",
+                                  padding: "0.25rem 0.5rem",
+                                }}
+                              >
+                                {tech}
+                              </Badge>
+                            ))
+                          ) : (
+                            <Badge
+                              key={skill.category}
+                              pill
+                              bg={getRandomColor()}
+                              className="m-1"
+                            >
+                              {skill.category}
+                            </Badge>
+                          )}
+                        </Col>
+                      </Row>
                     </div>
                   ))}
                 </div>
@@ -250,6 +284,17 @@ const About: React.FunctionComponent<IAboutProps> = (props) => {
 
         <Row className="my-5">
           <h2 className="text-center mb-4">Professional Experience</h2>
+          <p className="text-center mb-4">
+            Throughout my career, I have been fortunate to work with leading
+            companies, each providing unique opportunities to hone my skills and
+            contribute to impactful projects. My journey in the tech industry
+            has been marked by a commitment to excellence, continuous learning,
+            and a passion for innovation.
+            <p>
+              Below is a detailed account of my professional experience with the
+              organizations that have shaped my career.
+            </p>
+          </p>
           {experienceData.map((experience, index) => (
             <Col md={6} key={index} className="mb-4">
               <Card className="h-100">
