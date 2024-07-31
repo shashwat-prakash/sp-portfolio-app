@@ -230,6 +230,19 @@
   margin-bottom: 20px;
 }
 
+/* Styles for tilting effect */
+.tilt-card {
+  transition: transform 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+.tilt-card:hover {
+  transform: rotateX(-1deg) rotateY(20deg);
+  background-color: rgba(251, 249, 249, 0.97);
+  opacity: 1;
+}
+
+
 /* Add to your CSS file */
 .not-found-container {
   text-align: center;

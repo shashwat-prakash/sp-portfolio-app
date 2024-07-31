@@ -19,13 +19,21 @@ interface Field {
 interface ISPFormProps {
   fields: Field[];
   onSubmit: (data: { [key: string]: any }) => void;
+  isButtonDisabled: any;
+  onChange: (data: { [key: string]: any }) => void;
 }
 
 const SPForm: React.FunctionComponent<ISPFormProps> = ({
   fields,
   onSubmit,
+  isButtonDisabled,
+  onChange,
 }) => {
   const [formData, setFormData] = React.useState<{ [key: string]: any }>({});
+
+  React.useEffect(() => {
+    onChange(formData);
+  }, [formData]);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -42,6 +50,7 @@ const SPForm: React.FunctionComponent<ISPFormProps> = ({
         [name]: value,
       }));
     }
+    //onChange(formData);
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -142,7 +151,7 @@ const SPForm: React.FunctionComponent<ISPFormProps> = ({
         </Form.Group>
       ))}
       <div className="d-flex justify-content-center">
-        <Button className="mt-3" type="submit">
+        <Button className="mt-3" type="submit" disabled={isButtonDisabled}>
           Submit
         </Button>
       </div>
