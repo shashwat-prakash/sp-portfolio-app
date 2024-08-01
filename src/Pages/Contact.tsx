@@ -59,6 +59,7 @@ const Contact: React.FunctionComponent<IContactProps> = (props) => {
 
   const handleSubmit = (data: { [key: string]: any }) => {
     setIsContactUsFormSubmited(false);
+
     // const { name, email, contact, message } = data;
 
     // setFormData({
@@ -67,6 +68,30 @@ const Contact: React.FunctionComponent<IContactProps> = (props) => {
     //   contact: contact,
     //   message: message,
     // });
+
+    // const reqBody = {
+    //   Name: data.name,
+    //   ContactNum: data.contact,
+    //   Email: data.email,
+    //   Message: data.message,
+    // };
+    // const response = await fetch(
+    //   "http://localhost:5108/controller/submit-form",
+    //   {
+    //     method: "POST",
+    //     headers: { "Content-Type": "application/json" },
+    //     body: JSON.stringify(reqBody),
+    //   }
+    // );
+    // if (response.ok) {
+    //   setFormData({
+    //     name: "",
+    //     email: "",
+    //     message: "",
+    //     contact: "",
+    //   });
+    //   console.log("Blog post created");
+    // }
 
     setFormData({
       name: "",
