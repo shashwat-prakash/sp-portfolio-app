@@ -2,6 +2,7 @@ import * as React from "react";
 import { Card, Carousel, Col, Container, Row } from "react-bootstrap";
 import raj_mehta from "../Assets/raj_mehta.jpg";
 import priyatam_piyush from "../Assets/priyatam_piyush.jpg";
+import shubh_jain from "../Assets/shubh_jain.jpg";
 
 interface ITestimonialsProps {}
 
@@ -9,6 +10,7 @@ const Testimonials: React.FunctionComponent<ITestimonialsProps> = (props) => {
   const images: Record<string, string> = {
     raj_mehta: raj_mehta,
     priyatam_piyush: priyatam_piyush,
+    shubh_jain: shubh_jain,
   };
 
   const testimonials = [
@@ -21,20 +23,6 @@ const Testimonials: React.FunctionComponent<ITestimonialsProps> = (props) => {
       image: "raj_mehta",
     },
     {
-      name: "Meghraj Vinod",
-      feedback: "Excellent support and communication.",
-      designation: "Principle Consultant",
-      company: "Genpact",
-      image: "client2.jpg",
-    },
-    {
-      name: "Deepak Sharma",
-      feedback: "Highly recommend for AI solutions.",
-      designation: "Assistant Manager",
-      company: "Accenture",
-      image: "client3.jpg",
-    },
-    {
       name: "Priyatam Piyush",
       feedback:
         "Working with this individual is a rare opportunity to come across; a self-driven natural leader with exceptional teamwork spirit and ethics. It was indeed a great pleasure working alongside this Software Developer at Genpact as a teammate. Their ability to oversee all teams and complete assigned tasks on time was particularly impressive to me.",
@@ -43,19 +31,34 @@ const Testimonials: React.FunctionComponent<ITestimonialsProps> = (props) => {
       image: "priyatam_piyush",
     },
     {
-      name: "Anil Pawar",
-      feedback: "Excellent support and communication.",
-      designation: "Senior Principle Consultant",
-      company: "Genpact",
-      image: "client2.jpg",
+      name: "Shubh Jain",
+      feedback:
+        "Dedicated and a very good person to work with his passion and knowledge about his domain is amazing. I worked with him for around a year and half and I learned a lot.",
+      designation: "Senior Software Engineer",
+      company: "Agenty Analytics Pvt Ltd",
+      image: "shubh_jain",
     },
-    {
-      name: "Kratika Sharma",
-      feedback: "Highly recommend for AI solutions.",
-      designation: "Consultant",
-      company: "Genpact",
-      image: "client3.jpg",
-    },
+    // {
+    //   name: "Kratika Sharma",
+    //   feedback: "Highly recommend for AI solutions.",
+    //   designation: "Consultant",
+    //   company: "Genpact",
+    //   image: "client3.jpg",
+    // },
+    // {
+    //   name: "Meghraj Vinod",
+    //   feedback: "Excellent support and communication.",
+    //   designation: "Principle Consultant",
+    //   company: "Genpact",
+    //   image: "client2.jpg",
+    // },
+    // {
+    //   name: "Deepak Sharma",
+    //   feedback: "Highly recommend for AI solutions.",
+    //   designation: "Assistant Manager",
+    //   company: "Accenture",
+    //   image: "client3.jpg",
+    // },
   ];
   return (
     <>

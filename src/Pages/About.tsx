@@ -71,7 +71,6 @@ const About: React.FunctionComponent<IAboutProps> = (props) => {
         "Create and configure IVR Flows for Calls and Chat in Amazon Connect",
         "Integration of Amazon Connect CCP and Connect APIs into custom Contact Center application",
         "Integration of third parties application into custom Contact Center application",
-        "Implement SAML2, and OIDC Authentication and Authorization by using OKTA and AWS Cognito",
       ],
       startDate: "August 2024",
       endDate: "Present",

@@ -142,6 +142,7 @@
 /* Add this in your CSS file */
 .blockquote {
   font-style: italic;
+  font-size: 0.2rem;
   margin: 0;
   padding: 1rem;
   background-color: #f8f9fa;
@@ -159,6 +160,10 @@
 
 .footer p {
   margin-bottom: 10px;
+}
+
+.footer .page_url {
+  text-decoration: none;
 }
 
 .about-page {
