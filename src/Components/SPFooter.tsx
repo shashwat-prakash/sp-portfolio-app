@@ -1,15 +1,27 @@
 import * as React from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import { Button, Col, Container, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 
 interface ISPFooterProps {}
 
 const SPFooter: React.FunctionComponent<ISPFooterProps> = (props) => {
+  const handleSubscribe = () => {
+    toast.success(
+      "You're all set! Expect the latest updates and offers in your inbox soon.",
+      {
+        position: "top-right",
+        autoClose: 3000,
+      }
+    );
+  };
+
   return (
     <>
       <footer className="footer bg-dark text-white">
         <Container>
           <Row>
-            <Col md={4}>
+            <Col md={3}>
               <h5>Contact Information</h5>
               {/* <p>Email: shashwat22.14sep@gmail.com</p> */}
               <p>
@@ -21,7 +33,36 @@ const SPFooter: React.FunctionComponent<ISPFooterProps> = (props) => {
 
               <p>Phone: +91-9066740766</p>
             </Col>
-            <Col md={4}>
+            <Col md={3}>
+              <h5>Pages</h5>
+              <p>
+                <Link to={"/"} className="text-white text-decoration-underline">
+                  Home
+                </Link>
+                <br />
+                <Link
+                  to={"about"}
+                  className="text-white text-decoration-underline"
+                >
+                  About
+                </Link>
+                <br />
+                <Link
+                  to={"services"}
+                  className="text-white text-decoration-underline"
+                >
+                  Services
+                </Link>
+                <br />
+                <Link
+                  to={"contact"}
+                  className="text-white text-decoration-underline"
+                >
+                  Contact Us
+                </Link>
+              </p>
+            </Col>
+            <Col md={3}>
               <h5>Follow Me</h5>
               <p>
                 <a
@@ -57,7 +98,7 @@ const SPFooter: React.FunctionComponent<ISPFooterProps> = (props) => {
                 </a>
               </p>
             </Col>
-            <Col md={4}>
+            <Col md={3}>
               <h5>Subscribe</h5>
               <p>Get the latest updates and offers.</p>
               <form>
@@ -66,9 +107,12 @@ const SPFooter: React.FunctionComponent<ISPFooterProps> = (props) => {
                   placeholder="Enter your email"
                   className="form-control mb-2"
                 />
-                <button type="submit" className="btn btn-primary">
+                <Button variant="primary" onClick={handleSubscribe}>
                   Subscribe
-                </button>
+                </Button>
+                {/* <button type="submit" className="btn btn-primary">
+                  Subscribe
+                </button> */}
               </form>
             </Col>
           </Row>
