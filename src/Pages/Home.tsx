@@ -17,6 +17,24 @@ const Home: React.FunctionComponent<IHomeProps> = (props) => {
     document.title = "Shashwat | Home";
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const hero = document.querySelector(
+        ".hero-section"
+      ) as HTMLElement | null;
+      if (hero && hero) {
+        let scrollPos = window.scrollY;
+        hero.style.backgroundPosition = `center ${scrollPos * 0.5}px`;
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
       <div className="hero-section">

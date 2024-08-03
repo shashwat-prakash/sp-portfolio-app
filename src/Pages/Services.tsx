@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Card, Col, Container, Row } from "react-bootstrap";
+import { Card, Col, Container, Nav, Row } from "react-bootstrap";
 
 interface IServicesProps {}
 
@@ -49,10 +49,12 @@ const Services: React.FunctionComponent<IServicesProps> = (props) => {
 
   return (
     <>
-      <Container className="services-page">
+      <Container className="services-page" id="service">
         <Row className="my-5">
           <Col md={12}>
-            <h1 className="text-center">Our Services</h1>
+            <h1 className="text-center">
+              <Nav.Link href="#service">Our Services</Nav.Link>
+            </h1>
             <p className="lead text-center">
               Offering a range of services to meet your business needs, from web
               development to advanced AI solutions.

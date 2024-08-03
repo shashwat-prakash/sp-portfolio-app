@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Card, Carousel, Col, Container, Row } from "react-bootstrap";
+import { Card, Carousel, Col, Container, Nav, Row } from "react-bootstrap";
 import raj_mehta from "../Assets/raj_mehta.jpg";
 import priyatam_piyush from "../Assets/priyatam_piyush.jpg";
 import shubh_jain from "../Assets/shubh_jain.jpg";
@@ -62,8 +62,10 @@ const Testimonials: React.FunctionComponent<ITestimonialsProps> = (props) => {
   ];
   return (
     <>
-      <Container className="testimonials">
-        <h2 className="text-center">Testimonials</h2>
+      <Container className="testimonials" id="testimonials">
+        <h2 className="text-center">
+          <Nav.Link href="#testimonials">Testimonials</Nav.Link>
+        </h2>
         <Carousel>
           {testimonials.map((testimonial, index) => (
             <Carousel.Item key={index} interval={3000}>
@@ -74,7 +76,7 @@ const Testimonials: React.FunctionComponent<ITestimonialsProps> = (props) => {
                       variant="top"
                       src={images[testimonial.image]}
                       className="rounded-circle mx-auto mt-3"
-                      style={{ width: "160px", height: "150px" }}
+                      style={{ width: "160px", height: "160px" }}
                     />
                     <Card.Body>
                       <Card.Title>{testimonial.name}</Card.Title>

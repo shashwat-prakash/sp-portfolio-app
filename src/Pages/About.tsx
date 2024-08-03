@@ -296,8 +296,8 @@ const About: React.FunctionComponent<IAboutProps> = (props) => {
           </p>
           {experienceData.map((experience, index) => (
             <Col md={6} key={index} className="mb-4">
-              <Card className="h-100">
-                <Card.Body>
+              <Card className="h-100 d-flex flex-column">
+                <Card.Body className="flex-grow-1 d-flex flex-column">
                   <div className="d-flex align-items-center mb-3">
                     <img
                       src={experience.logo}
@@ -319,14 +319,14 @@ const About: React.FunctionComponent<IAboutProps> = (props) => {
                       </Card.Subtitle>
                     </div>
                   </div>
-                  <Card.Text>
+                  <Card.Text className="flex-grow-1">
                     <ul>
                       {experience.responsibilities.map((responsibility, i) => (
                         <li key={i}>{responsibility}</li>
                       ))}
                     </ul>
                   </Card.Text>
-                  <Card.Footer className="text-muted">
+                  <Card.Footer className="text-muted mt-auto">
                     {experience.startDate} - {experience.endDate}
                   </Card.Footer>
                 </Card.Body>

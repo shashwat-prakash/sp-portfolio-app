@@ -21,7 +21,7 @@ const SPNavbar: React.FunctionComponent<ISPNavbarProps> = (props) => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse
             id="basic-navbar-nav"
-            className="justify-content-end"
+            className="justify-content-end small"
           >
             <Nav className="ml-auto">
               <Nav.Link
@@ -29,7 +29,7 @@ const SPNavbar: React.FunctionComponent<ISPNavbarProps> = (props) => {
                 to="/"
                 className={
                   location.pathname === "/"
-                    ? "active-link nav-link"
+                    ? "active-link nav-link fs-6"
                     : "nav-link"
                 }
               >
@@ -40,7 +40,7 @@ const SPNavbar: React.FunctionComponent<ISPNavbarProps> = (props) => {
                 to="/about"
                 className={
                   location.pathname === "/about"
-                    ? "active-link nav-link"
+                    ? "active-link nav-link fs-6"
                     : "nav-link"
                 }
               >
@@ -51,7 +51,7 @@ const SPNavbar: React.FunctionComponent<ISPNavbarProps> = (props) => {
                 to="/services"
                 className={
                   location.pathname === "/services"
-                    ? "active-link nav-link"
+                    ? "active-link nav-link fs-6"
                     : "nav-link"
                 }
               >
@@ -73,7 +73,7 @@ const SPNavbar: React.FunctionComponent<ISPNavbarProps> = (props) => {
                 to="/contact"
                 className={
                   location.pathname === "/contact"
-                    ? "active-link nav-link"
+                    ? "active-link nav-link fs-6"
                     : "nav-link"
                 }
               >
