@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Button, Card, Col, Container, Row } from "react-bootstrap";
+import { Button, Card, Col, Container, Nav, Row } from "react-bootstrap";
 import hero_section_bg from "../Assets/hero_section_bg.jpg";
 import project_management from "../Assets/project_management.png";
 
@@ -57,8 +57,10 @@ const Projects: React.FunctionComponent<IProjectsProps> = (props) => {
 
   return (
     <>
-      <Container className="portfolio-highlights">
-        <h2 className="text-center">Portfolio Highlights</h2>
+      <Container className="portfolio-highlights" id="projects">
+        <h2 className="text-center">
+          <Nav.Link href="#projects">Portfolio Highlights</Nav.Link>
+        </h2>
         <Row>
           {projects.map((project, index) => (
             <Col md={4} key={index} className="mb-4">

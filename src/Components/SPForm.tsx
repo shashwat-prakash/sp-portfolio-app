@@ -151,7 +151,12 @@ const SPForm: React.FunctionComponent<ISPFormProps> = ({
         </Form.Group>
       ))}
       <div className="d-flex justify-content-center">
-        <Button className="mt-3" type="submit" disabled={isButtonDisabled}>
+        <Button
+          variant="primary"
+          className="mt-3 shadow"
+          type="submit"
+          disabled={isButtonDisabled}
+        >
           Submit
         </Button>
       </div>

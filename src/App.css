@@ -37,7 +37,7 @@
   }
 }
 
-.hero-section {
+/* .hero-section {
   background-image: url('/src/Assets/hero_section_bg.jpg');
   background-size: cover;
   background-position: center;
@@ -57,7 +57,51 @@
 
 .hero-section .btn {
   margin: 5px;
+} */
+
+html {
+  scroll-behavior: smooth;
 }
+
+.hero-section {
+  background-image: url('/src/Assets/hero_section_bg.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  color: #fff;
+  padding: 100px 0;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  z-index: -1;
+  transform: scale(1.1);
+  filter: blur(5px);
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero-section p {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+.hero-section .btn {
+  margin: 5px;
+}
+
 
 .featured-skills {
   padding: 50px 0;
@@ -365,3 +409,34 @@ body, html, #root {
 .mt-auto {
   margin-top: auto !important;
 }
+
+
+.navbar-brand-link {
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+}
+
+.navbar-brand-link em {
+  text-decoration: none; /* Remove default underline for the <em> element */
+}
+
+.navbar-brand-link::after,
+.navbar-brand-link::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+  left: 0;
+}
+
+.navbar-brand-link::after {
+  bottom: -3px;
+}
+
+.navbar-brand-link::before {
+  bottom: -7px;
+}
+
+
