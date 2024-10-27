@@ -3,12 +3,14 @@ import { Card, Carousel, Col, Container, Nav, Row } from "react-bootstrap";
 import raj_mehta from "../Assets/raj_mehta.jpg";
 import priyatam_piyush from "../Assets/priyatam_piyush.jpg";
 import shubh_jain from "../Assets/shubh_jain.jpg";
+import monika_malik from "../Assets/monika_malik.jpeg";
 
 interface ITestimonialsProps {}
 
 const Testimonials: React.FunctionComponent<ITestimonialsProps> = (props) => {
   const images: Record<string, string> = {
     raj_mehta: raj_mehta,
+    monika_malik: monika_malik,
     priyatam_piyush: priyatam_piyush,
     shubh_jain: shubh_jain,
   };
@@ -23,6 +25,14 @@ const Testimonials: React.FunctionComponent<ITestimonialsProps> = (props) => {
       image: "raj_mehta",
     },
     {
+      name: "Monika Malik",
+      feedback:
+        "Worked with Shashwat for more than a year. During that term, I noticed he had a deep understanding of how SDLC works. Always committed to his work and keen on helping his colleagues. I have learned a lot from him. Truly an inspiration to everyone around him!!!",
+      designation: "Software Engineer",
+      company: "Agenty Analytics",
+      image: "monika_malik",
+    },
+    {
       name: "Priyatam Piyush",
       feedback:
         "Working with this individual is a rare opportunity to come across; a self-driven natural leader with exceptional teamwork spirit and ethics. It was indeed a great pleasure working alongside this Software Developer at Genpact as a teammate. Their ability to oversee all teams and complete assigned tasks on time was particularly impressive to me.",
@@ -35,16 +45,9 @@ const Testimonials: React.FunctionComponent<ITestimonialsProps> = (props) => {
       feedback:
         "Dedicated and a very good person to work with his passion and knowledge about his domain is amazing. I worked with him for around a year and half and I learned a lot.",
       designation: "Senior Software Engineer",
-      company: "Agenty Analytics Pvt Ltd",
+      company: "Agenty Analytics",
       image: "shubh_jain",
     },
-    // {
-    //   name: "Kratika Sharma",
-    //   feedback: "Highly recommend for AI solutions.",
-    //   designation: "Consultant",
-    //   company: "Genpact",
-    //   image: "client3.jpg",
-    // },
     // {
     //   name: "Meghraj Vinod",
     //   feedback: "Excellent support and communication.",
