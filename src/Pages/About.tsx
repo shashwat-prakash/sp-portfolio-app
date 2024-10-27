@@ -103,7 +103,7 @@ const About: React.FunctionComponent<IAboutProps> = (props) => {
     },
     {
       company: "Sigma Infosolutions Pvt Ltd",
-      logo: "https://cdn-enmoh.nitrocdn.com/EwpHCdlXbcSkkIHtbaniSwqwTdlmGwIV/assets/images/optimized/rev-008abc2/www.sigmainfo.net/wp-content/uploads/2023/07/logo-wt.png",
+      logo: "www.sigmainfo.net/wp-content/uploads/2023/07/logo-wt.png",
       role: "Associate Software Engineer",
       responsibilities: [
         "Investigate, and develop Web API in .Net Core with MySQL, and MongoDB",
@@ -261,7 +261,7 @@ const About: React.FunctionComponent<IAboutProps> = (props) => {
                     className="badge-container"
                     data-iframe-width="100%"
                     data-iframe-height="270"
-                    data-share-badge-id="ae7cb03b-7df9-46e1-81ee-f8da734250ca"
+                    data-share-badge-id="af477280-84f0-4702-b34e-18b838820623"
                     data-share-badge-host="https://www.credly.com"
                   ></div>
                   <h4>AWS Certified Developer - Associate</h4>
