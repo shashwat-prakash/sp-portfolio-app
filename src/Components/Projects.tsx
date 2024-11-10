@@ -59,7 +59,7 @@ const Projects: React.FunctionComponent<IProjectsProps> = (props) => {
     <>
       <Container className="portfolio-highlights" id="projects">
         <h2 className="text-center">
-          <Nav.Link href="#projects">Portfolio Highlights</Nav.Link>
+          <Nav.Link href="#projects">Project Highlights</Nav.Link>
         </h2>
         <Row>
           {projects.map((project, index) => (

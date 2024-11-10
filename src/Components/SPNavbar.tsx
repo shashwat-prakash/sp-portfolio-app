@@ -26,9 +26,9 @@ const SPNavbar: React.FunctionComponent<ISPNavbarProps> = (props) => {
             <Nav className="ml-auto">
               <Nav.Link
                 as={NavLink}
-                to="/"
+                to="/home"
                 className={
-                  location.pathname === "/"
+                  location.pathname === "/home"
                     ? "active-link nav-link fs-6"
                     : "nav-link"
                 }
@@ -37,9 +37,9 @@ const SPNavbar: React.FunctionComponent<ISPNavbarProps> = (props) => {
               </Nav.Link>
               <Nav.Link
                 as={NavLink}
-                to="/about"
+                to="/"
                 className={
-                  location.pathname === "/about"
+                  location.pathname === "/"
                     ? "active-link nav-link fs-6"
                     : "nav-link"
                 }

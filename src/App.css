@@ -440,3 +440,23 @@ body, html, #root {
 }
 
 
+.highlight {
+  font-weight: bold;
+  color: #007bff;
+  text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.1);
+}
+.highlight:hover {
+  transform: scale(1.05);
+  background-color: #5ea5f0;
+  color: #fff;
+}
+
+.connect-button {
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.connect-button:hover {
+  transform: scale(1.05);
+  background-color: #0056b3;
+  color: #fff;
+}

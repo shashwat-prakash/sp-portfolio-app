@@ -31,8 +31,8 @@ function App() {
       <Suspense fallback={<SPLoading />}>
         <Routes>
           <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
-            <Route path="/about" element={<About />} />
+            <Route index element={<About />} />
+            <Route path="/home" element={<Home />} />
             <Route path="/services" element={<Services />} />
             <Route path="/blogs" element={<Blogs />} />
             <Route path="/contact" element={<Contact />} />
