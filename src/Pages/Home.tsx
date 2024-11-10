@@ -49,7 +49,7 @@ const Home: React.FunctionComponent<IHomeProps> = (props) => {
                 AI-driven Customer Engagement.
               </p>
 
-              <Link to={"about"}>
+              <Link to={"/"}>
                 <Button variant="primary" className="m-2">
                   Learn More
                 </Button>

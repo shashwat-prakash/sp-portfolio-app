@@ -1,9 +1,12 @@
-import { useEffect } from "react";
+import { lazy, useEffect } from "react";
 import { Badge, Button, Card, Col, Container, Row } from "react-bootstrap";
 import shashwat_portfolio_pic from "../Assets/shashwat_portfolio_pic.jpeg";
 import { Link } from "react-router-dom";
 
 interface IAboutProps {}
+
+const Projects = lazy(() => import("../Components/Projects"));
+const Testimonials = lazy(() => import("../Components/Testimonials"));
 
 const About: React.FunctionComponent<IAboutProps> = (props) => {
   useEffect(() => {
@@ -77,7 +80,7 @@ const About: React.FunctionComponent<IAboutProps> = (props) => {
     },
     {
       company: "Genpact India",
-      logo: "https://www.genpact.com/content/experience-fragments/genpact/us/en/site/header0/header/_jcr_content/root/container_1299338043/image.coreimg.svg/1721268489491/genpact-logo.svg", // You can use URLs or import images
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Genpact_logo.svg/173px-Genpact_logo.svg.png", // You can use URLs or import images
       role: "Consultant",
       responsibilities: [
         "Migration of old Web API application from .Net 4.5 to .Net 5 Web API",
@@ -103,7 +106,7 @@ const About: React.FunctionComponent<IAboutProps> = (props) => {
     },
     {
       company: "Sigma Infosolutions Pvt Ltd",
-      logo: "www.sigmainfo.net/wp-content/uploads/2023/07/logo-wt.png",
+      logo: "https://www.topdevelopers.co/upload/thumb_new/20200218072653493203543.png",
       role: "Associate Software Engineer",
       responsibilities: [
         "Investigate, and develop Web API in .Net Core with MySQL, and MongoDB",
@@ -137,17 +140,105 @@ const About: React.FunctionComponent<IAboutProps> = (props) => {
             <div>
               <h1 className="text-center">Who am I?</h1>
               <p>
-                I am Shashwat Prakash. I am a dedicated Software Engineer
-                specializing in Web Development, Backend Development, and
-                crafting Conversational AI Chatbots. With a strong foundation in
-                Cloud platforms, I leverage my skills to create innovative and
-                efficient solutions that drive business success and enhance
-                customer engagement.
+                I am{" "}
+                <em>
+                  <u className="fw-bolder highlight">Shashwat Prakash</u>
+                </em>
+                . I am a dedicated Software Engineer specializing in Web
+                Development, Backend Development, and crafting Conversational AI
+                Chatbots. With a strong foundation in Cloud platforms, I
+                leverage my skills to create innovative and efficient solutions
+                that drive business success and enhance customer engagement.
               </p>
             </div>
           </Col>
         </Row>
+
         <Row className="my-5">
+          <Col md={6} className="mb-4">
+            <Card>
+              <Card.Body>
+                <Card.Img
+                  variant="top"
+                  src={shashwat_portfolio_pic}
+                  height="auto"
+                  className="rounded-circle mx-auto mt-1"
+                />
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col md={6} className="mb-4">
+            <p>
+              With over{" "}
+              <span className="highlight">
+                5+ years of hands-on experience in Fullstack Web Development
+              </span>{" "}
+              and a specialized focus in the{" "}
+              <span className="highlight">
+                Contact Center domain for 2 years
+              </span>
+              , I bring a powerful blend of{" "}
+              <span className="highlight">technical expertise</span> and{" "}
+              <span className="highlight">industry insight</span> to every
+              project.
+            </p>
+            <p>
+              I specialize in{" "}
+              <span className="highlight">C#, .NET, and ReactJS</span>,
+              utilizing these technologies to architect{" "}
+              <span className="highlight">scalable, impactful solutions</span>.
+              My skillset includes extensive work with{" "}
+              <span className="highlight">AWS services</span> like Lambda,
+              Amazon Connect, LEX, S3, CloudFront, API Gateway, and Kinesis, all
+              aimed at driving business success.
+            </p>
+            <p>
+              I have a <span className="highlight">proven track record</span> of
+              delivering customized solutions, including{" "}
+              <span className="highlight">intuitive Agent Desktops</span> for
+              contact centers and{" "}
+              <span className="highlight">intelligent Chatbots</span> that
+              streamline processes and enhance customer engagement.
+            </p>
+            <p>
+              As an{" "}
+              <span className="highlight">
+                AWS Certified Developer Associate
+              </span>
+              , I am dedicated to continuous learning, always staying at the
+              forefront of cloud technology advancements.
+            </p>
+            <p>
+              Recently, I’ve expanded my expertise into the{" "}
+              <span className="highlight">
+                exciting field of Generative AI for Conversational Chatbots
+              </span>
+              , exploring advanced solutions with{" "}
+              <span className="highlight">AWS Bedrock</span> and{" "}
+              <span className="highlight">ChatGPT</span>. Tackling challenges
+              head-on, I’m passionate about pushing the boundaries of technology
+              to deliver meaningful, innovative results.
+            </p>
+            <p>
+              Let's connect and discuss how we can collaborate to{" "}
+              <span className="highlight">
+                drive innovation and elevate user experiences
+              </span>
+              .
+            </p>
+            <Link to={"/contact"}>
+              <Button
+                variant="outline-info"
+                size="lg"
+                className="connect-button"
+              >
+                Let's Connect
+              </Button>
+            </Link>
+          </Col>
+        </Row>
+
+        {/* <Row className="my-5">
           <Col md={6} className="mb-4">
             <Card>
               <Card.Body>
@@ -202,7 +293,7 @@ const About: React.FunctionComponent<IAboutProps> = (props) => {
               </Button>
             </Link>
           </Col>
-        </Row>
+        </Row> */}
         <Row className="my-5">
           <Col md={6} className="mb-4">
             <Card className="h-100">
@@ -303,12 +394,11 @@ const About: React.FunctionComponent<IAboutProps> = (props) => {
                       src={experience.logo}
                       alt={experience.company}
                       className={
-                        experience.company === "Sigma Infosolutions Pvt Ltd" ||
-                        experience.company === "Genpact India"
+                        experience.company === "Genpac India"
                           ? "bg-dark me-3"
                           : "me-3"
                       }
-                      style={{ width: "80px", height: "50px" }}
+                      style={{ width: "80px", height: "48px" }}
                     />
                     <div>
                       <Card.Title className="mb-1">
@@ -334,6 +424,9 @@ const About: React.FunctionComponent<IAboutProps> = (props) => {
             </Col>
           ))}
         </Row>
+
+        <Projects />
+        <Testimonials />
 
         <Row className="my-5 text-center">
           <Col>
