@@ -28,6 +28,19 @@
   color: #61dafb;
 }
 
+/* typing cursor for animated text */
+.typing-cursor {
+  display: inline-block;
+  width: 1ch;
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

@@ -1,6 +1,6 @@
 import { Container, Row, Col, Card, Badge, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { Suspense, lazy, useEffect } from "react";
+import { Suspense, lazy, useEffect, useState } from "react";
 import shashwat_portfolio_pic from "../Assets/shashwat_portfolio_pic.jpeg";
 import { aboutData, Skill, Experience } from "../data/aboutData";
 
@@ -43,6 +43,23 @@ const achievements = [
 const About: React.FC = () => {
   const { skills, experienceData, badgeColors } = aboutData;
 
+  // typing effect for entire intro sentence
+  const fullSentence =
+    "I am Shashwat Prakash, a results-driven AI specialist with deep expertise in Generative AI, Agentic AI, RAG Systems, Telephony, and Conversational AI development.";
+  const [typedSentence, setTypedSentence] = useState("");
+
+  useEffect(() => {
+    let i = 0;
+    const timer = setInterval(() => {
+      setTypedSentence(fullSentence.slice(0, i + 1));
+      i++;
+      if (i >= fullSentence.length) {
+        clearInterval(timer);
+      }
+    }, 40);
+    return () => clearInterval(timer);
+  }, []);
+
   useEffect(() => {
     document.title = "Shashwat | Portfolio";
 
@@ -79,7 +96,7 @@ const About: React.FC = () => {
             padding: "60px 40px",
             color: "white",
             marginBottom: "60px",
-            marginTop: "40px",
+            marginTop: "10px",
             textAlign: "center",
             boxShadow: "0 10px 40px rgba(102, 126, 234, 0.3)",
           }}
@@ -93,9 +110,9 @@ const About: React.FC = () => {
             alt="Profile"
           />
           <h1 style={{ fontSize: "2.5rem", fontWeight: "bold" }}>
-            AI & Conversational Systems Expert
+            Conversational AI Expert
           </h1>
-          <p style={{ fontSize: "1.1rem", marginBottom: "30px" }}>
+          <p style={{ fontSize: "1.5rem", marginBottom: "30px" }}>
             Generative AI | Agentic AI | RAG Systems | Telephony Solutions
           </p>
           <div
@@ -143,33 +160,25 @@ const About: React.FC = () => {
         <Row className="mb-5">
           <Col md={12}>
             <div style={{ textAlign: "center", marginBottom: "40px" }}>
-              <h2 style={{ fontSize: "2rem", marginBottom: "20px" }}>
+              {/* <h2 style={{ fontSize: "2rem", marginBottom: "20px" }}>
                 Who am I?
-              </h2>
-              <p
+              </h2> */}
+              <h3
                 style={{
-                  fontSize: "1.1rem",
+                  fontSize: "1.6rem",
                   lineHeight: "1.8",
                   maxWidth: "900px",
                   margin: "0 auto",
-                  color: "#333",
+                  color: "#2a69b6",
+                  fontStyle: "italic",
                 }}
               >
-                I am{" "}
-                <span
-                  style={{
-                    fontWeight: "bold",
-                    color: "#667eea",
-                    fontSize: "1.2rem",
-                  }}
-                >
-                  Shashwat Prakash
-                </span>
-                , a results-driven AI specialist with deep expertise in{" "}
-                <strong>Generative AI</strong>, <strong>Agentic AI</strong>,{" "}
-                <strong>RAG Systems</strong>, <strong>Telephony</strong>, and{" "}
-                <strong>Conversational AI</strong> development.
-              </p>
+                {typedSentence}
+                {typedSentence !== fullSentence && (
+                  <span className="typing-cursor">|</span>
+                )}
+              </h3>
+
               <div
                 style={{
                   maxWidth: "900px",

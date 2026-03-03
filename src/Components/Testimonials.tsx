@@ -26,6 +26,18 @@ const Testimonials: React.FunctionComponent<ITestimonialsProps> = () => {
   };
 
   const testimonials: Testimonial[] = testimonialsData as Testimonial[];
+
+  // helper to split into chunks of size n
+  const chunk = <T,>(arr: T[], size: number): T[][] => {
+    const chunks: T[][] = [];
+    for (let i = 0; i < arr.length; i += size) {
+      chunks.push(arr.slice(i, i + size));
+    }
+    return chunks;
+  };
+
+  const groups = chunk(testimonials, 3);
+
   return (
     <>
       <Container className="testimonials" id="testimonials">
@@ -33,35 +45,38 @@ const Testimonials: React.FunctionComponent<ITestimonialsProps> = () => {
           <Nav.Link href="#testimonials">Testimonials</Nav.Link>
         </h2>
         <Carousel>
-          {testimonials.map((testimonial, index) => (
-            <Carousel.Item key={index} interval={3000}>
+          {groups.map((group, idx) => (
+            <Carousel.Item key={idx} interval={4000}>
               <Row className="justify-content-center">
-                <Col md={4} className="mb-2">
-                  <Card className="text-center h-100">
-                    <Card.Img
-                      variant="top"
-                      src={images[testimonial.image]}
-                      className="rounded-circle mx-auto mt-3"
-                      style={{ width: "160px", height: "160px" }}
-                    />
-                    <Card.Body>
-                      <Card.Title>{testimonial.name}</Card.Title>
-                      <Card.Subtitle className="mb-2 text-muted">
-                        {testimonial.designation}, {testimonial.company}
-                      </Card.Subtitle>
-                      <blockquote className="blockquote">
-                        <p className="small">{testimonial.feedback}</p>
-                      </blockquote>
-                    </Card.Body>
-                  </Card>
-                </Col>
+                {group.map((testimonial, index) => (
+                  <Col md={4} className="mb-3" key={index}>
+                    <Card className="text-center h-100">
+                      <Card.Img
+                        variant="top"
+                        src={images[testimonial.image]}
+                        className="rounded-circle mx-auto mt-3"
+                        style={{ width: "160px", height: "160px" }}
+                      />
+                      <Card.Body>
+                        <Card.Title>{testimonial.name}</Card.Title>
+                        <Card.Subtitle className="mb-2 text-muted">
+                          {testimonial.designation}, {testimonial.company}
+                        </Card.Subtitle>
+                        <blockquote className="blockquote">
+                          <p className="small">{testimonial.feedback}</p>
+                        </blockquote>
+                      </Card.Body>
+                    </Card>
+                  </Col>
+                ))}
               </Row>
             </Carousel.Item>
           ))}
         </Carousel>
       </Container>
 
-      {/* <Container className="testimonials">
+      {/* legacy layout kept for reference
+      <Container className="testimonials">
         <h2 className="text-center">Testimonials</h2>
         <Row>
           {testimonials.map((testimonial, index) => (

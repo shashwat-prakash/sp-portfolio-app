@@ -154,7 +154,7 @@ const Contact: React.FunctionComponent<IContactProps> = (props) => {
     <>
       <Container className="contact-us-page">
         {/* chat display */}
-        <Row className="my-5 justify-content-center">
+        <Row className="my-1 justify-content-center">
           <Col md={8}>
             <div
               ref={chatContainerRef}
