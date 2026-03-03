@@ -1,0 +1,44 @@
+[
+    {
+        "title": "Intelligent Contact Center AI",
+        "icon": "🤖",
+        "description": "An advanced contact center solution powered by AWS Bedrock and Amazon Connect, featuring Agentic AI with tool use, intelligent IVR flows, real-time analytics, and multi-channel chatbot support for 40%+ support cost reduction.",
+        "image": "project1.jpg",
+        "link": "/portfolio/project-one"
+    },
+    {
+        "title": "RAG-Based Knowledge Assistant",
+        "icon": "📚",
+        "description": "A Retrieval-Augmented Generation system leveraging vector databases and semantic search to provide accurate, context-aware responses. Implements document processing pipelines and real-time knowledge retrieval for enterprise support systems.",
+        "image": "project2.jpg",
+        "link": "/portfolio/project-two"
+    },
+    {
+        "title": "Multi-Agent Orchestration Platform",
+        "icon": "🧠",
+        "description": "A sophisticated multi-agent system with autonomous agents handling different business processes. Features agent-to-agent communication, tool use orchestration, reasoning capabilities, and workflow automation across complex business scenarios.",
+        "image": "project3.jpg",
+        "link": "/portfolio/project-three"
+    },
+    {
+        "title": "Generative AI Chatbot Suite",
+        "icon": "💬",
+        "description": "End-to-end conversational AI solution using Claude and OpenAI LLMs with advanced prompt engineering, fine-tuning, and context management. Deployed across web, mobile, and voice channels with multi-language support.",
+        "image": "project1.jpg",
+        "link": "/portfolio/project-four"
+    },
+    {
+        "title": "Telephony-Integrated Voice Agent",
+        "icon": "☎️",
+        "description": "A voice-enabled agentic AI system integrated with Amazon Connect and AWS Lex, featuring real-time transcription, sentiment analysis, and intelligent call routing. Includes custom agent desktop for CSR assistance and real-time intervention.",
+        "image": "project2.jpg",
+        "link": "/portfolio/project-five"
+    },
+    {
+        "title": "Intelligent Agent Desktop for Support",
+        "icon": "🧩",
+        "description": "A React-based agent desktop powered by Agentic AI, providing CSRs with AI-suggested responses, contextual information retrieval, and automated ticket routing. Seamlessly integrates CRM, knowledge base, and real-time customer sentiment analysis.",
+        "image": "project3.jpg",
+        "link": "/portfolio/project-six"
+    }
+]

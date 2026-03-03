@@ -1,0 +1,30 @@
+[
+    {
+        "name": "Rajkishor Mehta",
+        "feedback": "Consistently demonstrates a deep understanding of their work and reliably meets deadlines. Their ability to tackle challenges head-on and contribute effectively to our projects is greatly valued. I appreciate their dedication and expertise.",
+        "designation": "Software Engineer",
+        "company": "KMG Solution",
+        "image": "raj_mehta"
+    },
+    {
+        "name": "Monika Malik",
+        "feedback": "Worked with Shashwat for more than a year. During that term, I noticed he had a deep understanding of how SDLC works. Always committed to his work and keen on helping his colleagues. I have learned a lot from him. Truly an inspiration to everyone around him!!!",
+        "designation": "Software Engineer",
+        "company": "Agenty Analytics",
+        "image": "monika_malik"
+    },
+    {
+        "name": "Priyatam Piyush",
+        "feedback": "Working with this individual is a rare opportunity to come across; a self-driven natural leader with exceptional teamwork spirit and ethics. It was indeed a great pleasure working alongside this Software Developer at Genpact as a teammate. Their ability to oversee all teams and complete assigned tasks on time was particularly impressive to me.",
+        "designation": "Consultant",
+        "company": "Genpact",
+        "image": "priyatam_piyush"
+    },
+    {
+        "name": "Shubh Jain",
+        "feedback": "Dedicated and a very good person to work with his passion and knowledge about his domain is amazing. I worked with him for around a year and half and I learned a lot.",
+        "designation": "Senior Software Engineer",
+        "company": "Agenty Analytics",
+        "image": "shubh_jain"
+    }
+]

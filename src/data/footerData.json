@@ -1,0 +1,42 @@
+{
+    "contact": {
+        "email": "shashwat22.14sep@gmail.com",
+        "phone": "+91-9066740766"
+    },
+    "pages": [
+        {
+            "label": "Home",
+            "to": "/"
+        },
+        {
+            "label": "About",
+            "to": "about"
+        },
+        {
+            "label": "Services",
+            "to": "services"
+        },
+        {
+            "label": "Contact Us",
+            "to": "contact"
+        }
+    ],
+    "social": [
+        {
+            "label": "LinkedIn",
+            "url": "https://www.linkedin.com/in/shashwat-prk"
+        },
+        {
+            "label": "GitHub",
+            "url": "https://github.com/shashwat-prakash"
+        },
+        {
+            "label": "Stack Overflow",
+            "url": "https://stackoverflow.com/users/12359013/shashwat-prakash"
+        },
+        {
+            "label": "Twitter",
+            "url": "https://x.com/ShashwatPrk"
+        }
+    ]
+}
