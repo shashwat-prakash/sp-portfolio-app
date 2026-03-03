@@ -44,7 +44,7 @@ const About: React.FC = () => {
   const { skills, experienceData, badgeColors } = aboutData;
 
   useEffect(() => {
-    document.title = "Shashwat | About";
+    document.title = "Shashwat | Portfolio";
 
     // load Credly badge script once and clean up on unmount
     const script = document.createElement("script");
