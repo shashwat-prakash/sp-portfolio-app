@@ -4,7 +4,6 @@ import { Route, Routes } from "react-router-dom";
 import SPLoading from "./Components/SPLoading";
 import { ToastContainer } from "react-toastify";
 import NotFound from "./Pages/NotFound";
-import Blogs from "./Pages/Blogs";
 import Layout from "./Components/Layout";
 
 const Home = lazy(() => import("./Pages/Home"));
@@ -32,9 +31,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<About />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/blogs" element={<Blogs />} />
+            {/* <Route path="/home" element={<Home />} /> */}
+            {/* <Route path="/services" element={<Services />} /> */}
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />{" "}
           </Route>

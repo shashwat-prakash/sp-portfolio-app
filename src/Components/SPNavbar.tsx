@@ -7,15 +7,44 @@ const SPNavbar: React.FunctionComponent<ISPNavbarProps> = (props) => {
   const location = useLocation();
   return (
     <>
-      <Navbar
-        bg="light"
-        expand="lg"
-        className="custom-navbar sticky-top shadow"
-      >
+      <Navbar expand="lg" className="custom-navbar shadow">
         <Container>
           <Navbar.Brand>
-            <Link to="/" className="navbar-brand-link">
-              <em>Shashwat</em>
+            <Link
+              to="/"
+              className="navbar-brand-link d-flex align-items-center"
+              style={{ textDecoration: "none" }}
+            >
+              <svg
+                width="36"
+                height="36"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                style={{ marginRight: 10 }}
+              >
+                <circle cx="12" cy="12" r="12" fill="#667eea" />
+                <text
+                  x="12"
+                  y="16"
+                  textAnchor="middle"
+                  fontSize="11"
+                  fill="#000000"
+                  fontFamily="Arial, Helvetica, sans-serif"
+                >
+                  SP
+                </text>
+              </svg>
+              <span
+                style={{
+                  color: "black",
+                  fontStyle: "italic",
+                  fontWeight: 600,
+                  fontSize: "1.05rem",
+                }}
+              >
+                Shashwat
+              </span>
             </Link>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -23,8 +52,8 @@ const SPNavbar: React.FunctionComponent<ISPNavbarProps> = (props) => {
             id="basic-navbar-nav"
             className="justify-content-end small"
           >
-            <Nav className="ml-auto">
-              <Nav.Link
+            <Nav className="ml-auto align-items-center">
+              {/* <Nav.Link
                 as={NavLink}
                 to="/home"
                 className={
@@ -34,19 +63,24 @@ const SPNavbar: React.FunctionComponent<ISPNavbarProps> = (props) => {
                 }
               >
                 Home
-              </Nav.Link>
-              <Nav.Link
+              </Nav.Link> */}
+              {/* <Nav.Link
                 as={NavLink}
                 to="/"
-                className={
+                style={
                   location.pathname === "/"
-                    ? "active-link nav-link fs-6"
-                    : "nav-link"
+                    ? {
+                        color: "white",
+                        background: "rgba(255,255,255,0.12)",
+                        padding: "6px 10px",
+                        borderRadius: 8,
+                      }
+                    : { color: "rgba(255,255,255,0.92)", padding: "6px 10px" }
                 }
               >
                 About
-              </Nav.Link>
-              <Nav.Link
+              </Nav.Link> */}
+              {/* <Nav.Link
                 as={NavLink}
                 to="/services"
                 className={
@@ -56,7 +90,7 @@ const SPNavbar: React.FunctionComponent<ISPNavbarProps> = (props) => {
                 }
               >
                 Services
-              </Nav.Link>
+              </Nav.Link> */}
               {/* <Nav.Link
                 as={NavLink}
                 to="/blogs"
@@ -71,14 +105,40 @@ const SPNavbar: React.FunctionComponent<ISPNavbarProps> = (props) => {
               <Nav.Link
                 as={NavLink}
                 to="/contact"
-                className={
+                style={
                   location.pathname === "/contact"
-                    ? "active-link nav-link fs-6"
-                    : "nav-link"
+                    ? {
+                        color: "#3b2e8a",
+                        background: "white",
+                        padding: "6px 12px",
+                        borderRadius: 8,
+                      }
+                    : { color: "white", padding: "6px 10px" }
                 }
               >
-                Contact Us
+                <Button
+                  variant="light"
+                  style={{
+                    borderRadius: 20,
+                    padding: "6px 14px",
+                    fontWeight: 600,
+                  }}
+                >
+                  Hire Me
+                </Button>
               </Nav.Link>
+              {/* <Link to="/contact" className="ms-3">
+                <Button
+                  variant="light"
+                  style={{
+                    borderRadius: 20,
+                    padding: "6px 14px",
+                    fontWeight: 600,
+                  }}
+                >
+                  Hire Me
+                </Button>
+              </Link> */}
               {/* <NavDropdown title="More" id="basic-nav-dropdown">
                 <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2">

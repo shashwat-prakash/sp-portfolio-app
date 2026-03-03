@@ -1,51 +1,22 @@
 import { useEffect } from "react";
 import { Card, Col, Container, Nav, Row } from "react-bootstrap";
 
+import servicesData from "../data/services.json";
+
 interface IServicesProps {}
 
-const Services: React.FunctionComponent<IServicesProps> = (props) => {
+interface Service {
+  title: string;
+  description: string;
+  icon: string;
+}
+
+const Services: React.FunctionComponent<IServicesProps> = () => {
   useEffect(() => {
     document.title = "Shashwat | Services";
   }, []);
 
-  const services = [
-    {
-      title: "Web Development",
-      description:
-        "Building responsive and dynamic websites using ReactJs and Angular.",
-      icon: "🌐",
-    },
-    {
-      title: "Backend Development",
-      description:
-        "Creating robust backend solutions with .NET, C#, Python, and databases like SQL and MongoDB.",
-      icon: "🔧",
-    },
-    {
-      title: "Conversational AI",
-      description:
-        "Developing intelligent chatbots using Amazon Lex and other AI tools.",
-      icon: "🤖",
-    },
-    {
-      title: "Chatbot Solutions",
-      description:
-        "Integrating chatbots into contact center platforms like Amazon Connect to enhance customer support and engagement.",
-      icon: "📞",
-    },
-    {
-      title: "Generative AI Integrations",
-      description:
-        "Implementing generative AI technologies to create interactive and personalized user experiences.",
-      icon: "💡",
-    },
-    {
-      title: "Cloud Services",
-      description:
-        "Leveraging AWS for scalable and secure cloud solutions, including deployment, management, and optimization.",
-      icon: "☁️",
-    },
-  ];
+  const services: Service[] = servicesData as Service[];
 
   return (
     <>

@@ -1,7 +1,6 @@
-import { lazy, useEffect, useState } from "react";
+import { lazy, useEffect, Suspense } from "react";
 import { Button, Card, Carousel, Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import hero_section_bg from "../Assets/hero_section_bg.jpg";
 // import Projects from "../Components/Projects";
 // import Services from "./Services";
 // import Testimonials from "../Components/Testimonials";
@@ -20,7 +19,7 @@ const Home: React.FunctionComponent<IHomeProps> = (props) => {
   useEffect(() => {
     const handleScroll = () => {
       const hero = document.querySelector(
-        ".hero-section"
+        ".hero-section",
       ) as HTMLElement | null;
       if (hero && hero) {
         let scrollPos = window.scrollY;
@@ -64,9 +63,11 @@ const Home: React.FunctionComponent<IHomeProps> = (props) => {
         </Container>
       </div>
 
-      <Services />
-      <Projects />
-      <Testimonials />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Services />
+        <Projects />
+        <Testimonials />
+      </Suspense>
     </>
   );
 };

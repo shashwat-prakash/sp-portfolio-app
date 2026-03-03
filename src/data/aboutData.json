@@ -1,0 +1,128 @@
+{
+    "skills": [
+        {
+            "category": "Agentic AI",
+            "technologies": [
+                "Agent Architecture",
+                "Tool Use & Function Calling",
+                "Reasoning & Planning",
+                "Multi-Agent Systems"
+            ]
+        },
+        {
+            "category": "Generative AI & LLMs",
+            "technologies": [
+                "AWS Bedrock",
+                "OpenAI",
+                "Prompt Engineering",
+                "Fine-tuning"
+            ]
+        },
+        {
+            "category": "RAG Systems",
+            "technologies": [
+                "Document Processing",
+                "Semantic Search",
+                "Knowledge Retrieval"
+            ]
+        },
+        {
+            "category": "Conversational AI",
+            "technologies": [
+                "Amazon Lex",
+                "Chatbot Design"
+            ]
+        },
+        {
+            "category": "Telephony & IVR",
+            "technologies": [
+                "Amazon Connect",
+                "IVR Flows",
+                "Analytics",
+                "Q in Connect"
+            ]
+        },
+        {
+            "category": "Cloud Services",
+            "technologies": [
+                "AWS Lambda",
+                "API Gateway",
+                "Amazon Bedrock",
+                "Bedrock AgentCore"
+            ]
+        },
+        {
+            "category": "Others",
+            "technologies": [
+                "React",
+                ".NET",
+                "C#",
+                "Python",
+                "MySQL",
+                "MongoDB",
+                "DynamoDB"
+            ]
+        }
+    ],
+    "experienceData": [
+        {
+            "company": "PwC US",
+            "logo": "http://www.pwc.com/etc/designs/pwc/css_common/image/404.gif",
+            "role": "Senior Associate",
+            "responsibilities": [
+                "Worked on AWS Connect, LEX, Lambda, DynamoDB, S3, Bedrock, AgentCore",
+                "Create and configure IVR Flows for Calls and Chat in Amazon Connect",
+                "Integration of Amazon Q in Connect and Bedrock AgentCore Gateway as MCP server for tool calls",
+                "Create Lex Bot which acts as admin interface to change the cofiguration of the system for calls and chat flows in Amazon Connect"
+            ],
+            "startDate": "August 2024",
+            "endDate": "Present"
+        },
+        {
+            "company": "Genpact India",
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Genpact_logo.svg/173px-Genpact_logo.svg.png",
+            "role": "Consultant",
+            "responsibilities": [
+                "Migration of old Web API application from .Net 4.5 to .Net 5 Web API",
+                "Implement SAML2, and OIDC Authentication and Authorization by using OKTA and AWS Cognito",
+                "Worked on AWS Lambda, Connect, API Gateway, DynamoDB, S3, CloudFront, EventBridge",
+                "Integration of Amazon Connect CCP and Connect APIs into custom Contact Center application",
+                "Integration of third parties application into custom Contact Center application",
+                "Create and configure IVR Flows for Calls and Chat in Amazon Connect"
+            ],
+            "startDate": "March 2022",
+            "endDate": "July 2024"
+        },
+        {
+            "company": "Agenty Analytics Pvt Ltd",
+            "logo": "https://cdn.agenty.com/images/icon/agenty-logo.png",
+            "role": "Software Engineer",
+            "responsibilities": [
+                "Developed backend services using .NET, C#, MySQL, and write xUnit Test Cases",
+                "Created Web Application Frontend in Angular"
+            ],
+            "startDate": "December 2020",
+            "endDate": "February 2022"
+        },
+        {
+            "company": "Sigma Infosolutions Pvt Ltd",
+            "logo": "https://www.topdevelopers.co/upload/thumb_new/20200218072653493203543.png",
+            "role": "Associate Software Engineer",
+            "responsibilities": [
+                "Investigate, and develop Web API in .Net Core with MySQL, and MongoDB",
+                "Created Web Application Frontend in Angular"
+            ],
+            "startDate": "December 2018",
+            "endDate": "February 2020"
+        }
+    ],
+    "badgeColors": [
+        "primary",
+        "secondary",
+        "success",
+        "danger",
+        "warning",
+        "info",
+        "dark"
+    ]
+}
